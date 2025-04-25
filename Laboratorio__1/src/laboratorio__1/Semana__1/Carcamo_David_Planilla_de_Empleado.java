@@ -27,6 +27,9 @@ public class Carcamo_David_Planilla_de_Empleado {
         System.out.println("\n Ingrese el valor de la tarifa por hora");
         double TarifaxHora = IngresoTarifa.nextDouble();
         
+        //Parte de desarrollo de proceso
+        double SalarioSemanal= (HorasLaboradas*TarifaxHora)/4
+        
         
     }
 }
