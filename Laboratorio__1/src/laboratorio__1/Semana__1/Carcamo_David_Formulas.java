@@ -29,9 +29,8 @@ public class Carcamo_David_Formulas {
         System.out.println("Ingrese el valor del denominador 2: ");
         double Denominador2= IngresoDen2.nextDouble();
         double EjA=(Numerador1/Denominador1)+(Numerador2/Denominador2);
-        System.out.println("\n El resultado el ejercicio A es: " EjA);
+        System.out.println("\n El resultado el ejercicio A es: " +EjA);
         
-        System.out.println("\n Resultado del A: "+EjA);
         
         
         //Ej b
@@ -101,7 +100,7 @@ public class Carcamo_David_Formulas {
         System.out.println("Ingrese el valor de p: ");
         double valorP= IngresoP.nextDouble();
         
-        double EjP= ((valorM/valorN)+(valorP));
+        double EjF= ((valorM/valorN)+(valorP));
         
         System.out.println("\n Resultado del f: "+EjF);
         
@@ -119,7 +118,7 @@ public class Carcamo_David_Formulas {
         System.out.println("Ingrese el valor de q: ");
         double valorQ= IngresoQ.nextDouble();
         
-        double EjQ= (valorM2+(valorN2/(valorP2-valorQ)));
+        double EjG= (valorM2+(valorN2/(valorP2-valorQ)));
         
         System.out.println("\n Resultado del g: "+EjG);
         
@@ -199,6 +198,22 @@ public class Carcamo_David_Formulas {
         double EjJ= (((3*valorA4)+valorB3)/(valorC3-((valorD3+(5*valorE2))/(valorF2+(valorG2/(2*valorH2))))));
         
         System.out.println("\n Resultado del J: "+EjJ);
+        
+        //Ej K
+        Scanner IngresoA5= new Scanner (System.in);
+        System.out.println("Ingrese el valor de a: ");
+        double valorA5= IngresoA5.nextDouble();
+        Scanner IngresoB4= new Scanner (System.in);
+        System.out.println("Ingrese el valor de b: ");
+        double valorB4= IngresoB4.nextDouble();
+        Scanner IngresoX2= new Scanner (System.in);
+        System.out.println("Ingrese el valor de x: ");
+        double valorX2= IngresoX2.nextDouble();
+        
+        double EjK= (((valorA5*valorA5)+(2*valorA5*valorB4)+(valorB4*valorB4))/((1/(valorX2*valorX2))+2));
+        
+        System.out.println("\n Resultado del K: "+EjK);
+        
         
       
  
