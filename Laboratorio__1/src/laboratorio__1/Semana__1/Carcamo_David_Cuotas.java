@@ -37,7 +37,7 @@ public class Carcamo_David_Cuotas {
         
         double Interes= Prestamo*InteresDecimal;
         double Seguro= Prestamo*SeguroDecimal;
-        double CuotaPagar= Prestamo + Interes+ Seguro + Comision;
+        double CuotaPagar= (Prestamo/Plazo) + (Interes+ Seguro + Comision);
         double TotalPagar= CuotaPagar*Plazo;
         
         //Sección de print
