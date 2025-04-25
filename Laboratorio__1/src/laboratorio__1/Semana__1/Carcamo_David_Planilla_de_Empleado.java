@@ -15,7 +15,8 @@ public class Carcamo_David_Planilla_de_Empleado {
         //Parte de ingreso de Datos mediante teclado
         
         Scanner IngresoNombre= new Scanner(System.in);
-        System.out.println("Ingrese el nombre completo del empleado:");
+        IngresoNombre.useDelimiter(";");
+        System.out.println("Ingrese el nombre completo del empleado (porfavor incluya un ´;´ al final del nombre):");
         String NombreEmpleado= IngresoNombre.next();
         
         Scanner IngresoHoras = new Scanner(System.in);
