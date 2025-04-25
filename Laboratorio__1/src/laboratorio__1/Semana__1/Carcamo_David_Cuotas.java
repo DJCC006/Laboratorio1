@@ -27,11 +27,26 @@ public class Carcamo_David_Cuotas {
         Scanner IngresoSeguro = new Scanner(System.in);
         System.out.println("\n Ingrese el porcentaje de seguro aplicado a la cuota (En forma no decimal): ");
         int SeguroEntero= IngresoSeguro.nextInt();
-        double Seguro = SeguroEntero/100;
+        double SeguroDecimal = SeguroEntero/100;
         
         Scanner IngresoPlazo = new Scanner (System.in);
         System.out.println("\n Ingrese el plazo establecido para pagar el préstamo (en meses): ");
         int Plazo= IngresoPlazo.nextInt();
+        
+        //Desarrollo de procesos
+        
+        double Interes= Prestamo*InteresDecimal*(Plazo/12);
+        double Seguro= Prestamo*SeguroDecimal*(Plazo/12);
+        double CuotaPagar= Prestamo+Interes+Seguro+Comision;
+        double TotalPagar= CuotaPagar*Plazo;
+        
+        //Sección de print
+        
+        System.out.println("\n****CUOTAS MENSUALES****");
+        System.out.println("\n Cuota de Pago Mensual: HNL "+CuotaPagar);
+        System.out.println("\n Total a Pagar: HNL "+TotalPagar);
+        
+       
         
         
         
