@@ -16,20 +16,24 @@ public class Carcamo_David_Planilla_de_Empleado {
         
         Scanner IngresoNombre= new Scanner(System.in);
         System.out.println("Ingrese el nombre completo del empleado:");
-        String NombreEmpleado= IngresoNombre.nextLine();
+        String NombreEmpleado= IngresoNombre.next();
         
         Scanner IngresoHoras = new Scanner(System.in);
         System.out.println("\n Ingrese el total de horas laboradas durante el mes");
         int HorasLaboradas= IngresoHoras.nextInt();
-        IngresoHoras.nextLine();
+   
         
         Scanner IngresoTarifa = new Scanner(System.in);
         System.out.println("\n Ingrese el valor de la tarifa por hora");
         double TarifaxHora = IngresoTarifa.nextDouble();
         
         //Parte de desarrollo de proceso
-        double SalarioSemanal= (HorasLaboradas*TarifaxHora)/4
+        double SalarioSemanal= (HorasLaboradas*TarifaxHora)/4;
         
+        //Parte de Impresión 
+        System.out.println("-----Boleta del Empleado-----");
+        System.out.println("Nombre del Empleado: "+NombreEmpleado+"\nHora de Trabajo Mensual: "+HorasLaboradas+"\nTarifa por Hora: "+TarifaxHora+
+                "\n Salario del Empleado Semanal: Lps. "+SalarioSemanal);
         
     }
 }
