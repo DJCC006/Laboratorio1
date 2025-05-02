@@ -46,17 +46,17 @@ public class Carcamo_David_Clases {
                 
                 if(mesInt >= 1 && mesInt <= 12 && diaInt>=1 && diaInt <=31){
                     System.out.println("Fecha Ingresada Correctamente");
-                    System.out.println("dia: "+posdia);
-                    System.out.println("dia del mes: "+diaInt);
+                    System.out.println("día: "+posdia);
+                    System.out.println("día del mes: "+diaInt);
                     System.out.println("mes: "+mesInt);
                 }else{
-                    System.out.println("ERROR Dia o mes fuera del rango");
+                    System.out.println("ERROR");
                 }
             }else{
-                System.out.println("ERROR formato dd/m invalido");
+                System.out.println("ERROR");
             }
         }else{
-            System.out.println("ERROR: formato inicial invalido");
+            System.out.println("ERROR");
         }
       
         
@@ -64,8 +64,8 @@ public class Carcamo_David_Clases {
         
         int finBracket= entrada.indexOf("],");
         String validaciondia= entrada.substring(1,finBracket);
-        if(validaciondia.equals("lunes") || validaciondia.equals("martes") || validaciondia.equals("miercoles")){
-            System.out.println("¿Se realiaron examenes durante este dia? (Y/N): ");
+        if(validaciondia.equals("lúnes") || validaciondia.equals("mártes") || validaciondia.equals("miércoles")){
+            System.out.println("¿Se realiaron exámenes durante este día? (Y/N): ");
             String decision= lea.next();
             String decisionLower=decision.toLowerCase();
             
@@ -82,7 +82,7 @@ public class Carcamo_David_Clases {
             }
             
         }else{
-            System.out.println("No se pueden hacer examenes durante estas fechas");
+            System.out.println("No se pueden hacer exámenes durante estas fechas");
         }
         
         //Validacion de jueves
@@ -91,9 +91,9 @@ public class Carcamo_David_Clases {
             double asistencia= lea.nextDouble();
             
             if(asistencia>50){
-                System.out.println("Asistio la mayoria");
+                System.out.println("Asistió la mayoria");
             }else{
-                System.out.println("No asistio la mayoria");
+                System.out.println("No asistió la mayoria");
             }
         }
         
@@ -120,6 +120,8 @@ public class Carcamo_David_Clases {
                 
                 
             }
+        }else{
+            System.out.println("ERROR");
         }
      
 
