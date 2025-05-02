@@ -15,11 +15,13 @@ public class Carcamo_David_Tiempo {
         Scanner lea= new Scanner(System.in);
         int ingreso=lea.nextInt();
         
-        int horas= ingreso>0 ? ingreso/3600 : 0;
+        int horas= ingreso>0 ? ingreso/3600: 0;
         
-        int minutos= ingreso>0 ? ingreso/60 : 0;
+        int restante= ingreso%3600;
         
-        int segundos= ingreso>0 ? ingreso : 0;
+        int minutos= ingreso>0 ? restante/60 : 0;
+          
+        int segundos= ingreso>0 ? restante%60 : 0;
         
         if (segundos==0 && horas==0 && minutos ==0){
             System.out.println("no se permite ese valor");
