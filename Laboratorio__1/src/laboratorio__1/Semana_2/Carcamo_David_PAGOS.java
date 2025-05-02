@@ -81,8 +81,14 @@ public class Carcamo_David_PAGOS {
     }else{
             subtotal=35.99*cantidadhoras;
         }
-        
-        
+      
+        //Desarrollo de total
+      double total = subtotal+pagoExtra;  
+      String totalF= String.format("%.2f",total);
+      
+      //Seccion Impresion
+        System.out.println("***Detalles de Pago***");
+        System.out.println("Codigo de Empleado: "+codigoEmpleado+"\nNombre: "+firstName+"\nApellido: "+firstLastName+"\nHoras Trabajadas: "+cantidadhoras+"\n Categoria: "+categoria+"\nSueldo Total: "+totalF);
       
     }
         
