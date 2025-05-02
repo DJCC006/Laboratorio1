@@ -77,13 +77,50 @@ public class Carcamo_David_Clases {
                 double totalalumnos=aprobados+reprobados;
                 double porcentajeaprobados=(aprobados/(totalalumnos))*100;
                 System.out.println("El procentaje de aprobados fue de: "+porcentajeaprobados);
+            }else{
+                System.out.println("Fin de proceso");
             }
             
         }else{
             System.out.println("No se pueden hacer examenes durante estas fechas");
         }
         
+        //Validacion de jueves
+        if(validaciondia.equals("jueves")){
+            System.out.println("Ingrese el procengaje de asistencia a clase: ");
+            double asistencia= lea.nextDouble();
+            
+            if(asistencia>50){
+                System.out.println("Asistio la mayoria");
+            }else{
+                System.out.println("No asistio la mayoria");
+            }
+        }
         
+        //Validacion viernes
+        String diasandmes = entrada.substring(finBracket + 2).trim();    
+        int Slash=diasandmes.indexOf("/");
+        String diaStr = diasandmes.substring(0,Slash).trim();
+        String mesStr = diasandmes.substring(Slash + 1).trim();
+                
+        diaInt = Integer.parseInt(diaStr);
+        mesInt = Integer.parseInt(mesStr);
+        
+        if(validaciondia.equals("viernes")){
+            if(diaInt==1 && mesInt ==1 || mesInt==7){
+                System.out.println("");
+                System.out.println("Comienzo de nuevo ciclo");
+                System.out.println("Ingrese el total de alumnos matriculados: ");
+                int cantalumnos= lea.nextInt();
+                System.out.println("Ingrese el precio por alumno($): ");
+                double precioxalumno= lea.nextDouble();
+                double preciototal=precioxalumno*cantalumnos;
+                System.out.println("***Detalles***");
+                System.out.println("Cantidad alumnos: "+cantalumnos+"\nPrecio por alumno: $."+precioxalumno+"\nTotal: $."+preciototal);
+                
+                
+            }
+        }
      
 
     }
