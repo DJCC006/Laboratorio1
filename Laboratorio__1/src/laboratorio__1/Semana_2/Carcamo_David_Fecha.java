@@ -18,6 +18,33 @@ public class Carcamo_David_Fecha {
         System.out.println("Porfavor ingrese la segunda fecha en el formato Dia/Mes/Año: ");
         String fechatwo=lea.next();
         
+        //Reconocimiento de fechas
+        
+        int dias=0;
+        int meses=0;
+        
+        String posfechaone= fechaone.substring(fechaone.length() -4);
+        String posfechatwo= fechatwo.substring(fechatwo.length()-4);
+        
+        int yearone=Integer.parseInt(posfechaone);
+        int yeartwo=Integer.parseInt(fechatwo);
+        
+        int mayoryear=0;
+        int minoryear=0;
+        
+        if(yearone>yeartwo){
+            mayoryear=yearone;
+            minoryear=yeartwo;
+        }else{
+            mayoryear=yeartwo;
+            minoryear=yearone;
+        }
+        
+        
+        
+        
+           
+        
         
     }
 }
