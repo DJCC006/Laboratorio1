@@ -181,6 +181,98 @@ public class Carcamo_David_Estructura {
                 
             }else if(opcion==4){
                 
+                //Ingreso de votantes
+                System.out.println("");
+                System.out.println("Ingrese la cantidad de votantes en el pais: ");
+                int votantes=lea.nextInt();
+                
+                
+                
+                int votosAzul=0;
+                int votosRojo=0;
+                int votosNegro=0;
+                int votosAmarillo=0;
+                
+                
+                int totalVotos=0;
+                int votosNulos=0;
+                int votosValidos=0;
+                String ganador="";
+                int cantidadganador=0;
+                //Ingreso de votos
+                int i;
+                for(i=1; i<=votantes; i++){
+                    System.out.println("");
+                    System.out.println("Ingrese la planilla por la que desea votar: (AZUL, ROJO, NEGRO, AMARILLO)");
+                    String planilla=lea.next();
+                    String planillaL=planilla.toLowerCase();
+                    
+                 
+                    
+                    //Registro de votos
+                    if(planillaL.equals("azul")){
+                         votosAzul++;
+                         totalVotos++;
+                         votosValidos++;
+                         
+                         if(votosAzul>cantidadganador){
+                             cantidadganador=votosAzul;
+                             ganador="Planilla Azul";
+                         }
+                         
+                         
+                    }else if(planillaL.equals("rojo")){
+                        votosRojo++;
+                        totalVotos++;
+                        votosValidos++;
+                        
+                           if(votosRojo>cantidadganador){
+                             cantidadganador=votosRojo;
+                             ganador="Planilla Roja";
+                         }
+                        
+                    }else if(planillaL.equals("negro")){
+                        votosNegro++;
+                        totalVotos++;
+                        votosValidos++;
+                        
+                           if(votosNegro>cantidadganador){
+                             cantidadganador=votosNegro;
+                             ganador="Planilla Negra";
+                         }
+                        
+                    }else if(planillaL.equals("amarillo")){
+                        votosAmarillo++;
+                        totalVotos++;
+                        votosValidos++;
+                        
+                           if(votosAmarillo>cantidadganador){
+                             cantidadganador=votosAmarillo;
+                             ganador="Planilla Amarilla";
+                         }
+                        
+                    }else{
+                        votosNulos++;
+                        totalVotos++;
+                    }
+                    
+                }
+                
+                double promedio=(totalVotos*0.60);
+                
+                if(votosValidos>promedio){
+                    System.out.println("La planilla ganadora es la "+ganador+" con "+cantidadganador+" votos");
+                }else{
+                    System.out.println("VOTACION FALLIDA");
+                }
+                
+                
+                
+                
+                
+                
+                
+                
             }else if(opcion==5){
                 status=false;
             }
