@@ -105,6 +105,8 @@ public class Carcamo_David_Estructura {
                             
                         }
                         
+                        
+                        //consideracion de palabra de igual longitud
                         if(firsttry==false){
                             if(length==lengthLargo){
                                 longwords= longwords + "\nTambien es palabra larga: "+palabra;
@@ -139,14 +141,18 @@ public class Carcamo_David_Estructura {
                     
                     int perfectsum=0;
                     
+                    
+                    //revision de divisores
                         int i;
                         for(i=1; i<num; i++){
                             int res=(num%i);
                             if(res==0){
-                                //divisores=i;
+                               
                                 perfectsum=perfectsum+i;
                             }
                         }
+                        
+                        //Evaluacion de numero perfecto
               
                         if(perfectsum==num){
                             System.out.println("");
@@ -183,6 +189,8 @@ public class Carcamo_David_Estructura {
                          
                     }
                 
+                
+                //print de numero si es primo
                 if(contador==2){
                     System.out.println("");
                     System.out.println("El numero "+numeroRandom+" es primo");
@@ -217,9 +225,6 @@ public class Carcamo_David_Estructura {
                 
                 cantvotaciones++;
                 //Ingreso de votantes
-                
-                
-                
                 System.out.println("Ingrese la cantidad de votantes en el pais: ");
                 int votantes=lea.nextInt();
                 
@@ -296,6 +301,7 @@ public class Carcamo_David_Estructura {
                     
                 }
                 
+                //procesos
                 double porcentaje=(totalVotos*0.60);
                 
                 if(votosValidos>porcentaje){
@@ -314,6 +320,7 @@ public class Carcamo_David_Estructura {
                 
             }else if(opcion==5){
                 
+                //prints de salida
                     System.out.println("");
                     System.out.println("***Conteos de apertura***");
                     System.out.println("1.Palabras alreves: "+cantreves);
