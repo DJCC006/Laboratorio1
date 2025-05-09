@@ -16,7 +16,14 @@ public class Carcamo_David_Estructura {
     public static void main(String[] args){
         
     boolean status=true;
-        
+    
+    
+    int cantreves=0;
+    int cantperfecto=0;
+    int cantprimos=0;
+    int cantvotaciones=0;
+    
+    
     while(status==true){
             
             Scanner lea= new Scanner(System.in);
@@ -28,6 +35,8 @@ public class Carcamo_David_Estructura {
             
    
                 if(opcion==1){
+                    
+                    cantreves++;
                 
                      boolean continuar=false;
                     
@@ -36,12 +45,13 @@ public class Carcamo_David_Estructura {
                     System.out.println("\n Ingrese el numero de palabras a evaluar");
                     int numpalabras=lea.nextInt();
                     
+                    
+                    
+                    //Variables generales
                     int lengthLargo=0;
                     String palabraLarga="";
-                    String almacenpalindromos="";
-                    
                     String longwords="";
-                    
+                    boolean firsttry=true;
                     int i;
                      for(i=1; i<=numpalabras; i++){
                         //Ingreso palabra
@@ -50,7 +60,7 @@ public class Carcamo_David_Estructura {
                         int length=palabra.length();
                         
                         
-                        //variables generales
+                        //variables locales
                         String alreves="";
                         String basepalabra=palabra;
                         String basepalabraL= basepalabra.toLowerCase();
@@ -70,38 +80,58 @@ public class Carcamo_David_Estructura {
                         
                         
                          System.out.println("Alreves: "+alreves);
+                         System.out.println("");
                         
+                         //Determinar palabra larga
+                         
                         if(length>lengthLargo){
                             lengthLargo=length;
-                            palabraLarga=alreves;
+                            palabraLarga=basepalabraL;
                             Longreverse=basealrevesL;
                             
-                            longwords= "Palabra mas larga es: "+palabraLarga;
+                            longwords= "Palabra mas larga es: "+palabra;
                             
-                            if(palabraLarga.equalsIgnoreCase(Longreverse)){
+                            if(firsttry==false){
+                                if(palabraLarga.equals(Longreverse)){
                                 longwords= longwords + "\nEs Palindromo";
+                                }else{
+                                longwords= longwords+"\nNo es Palindromo";
+                                }
+                            }else{
+                                firsttry=false;
                             }
                             
                             
                             
                         }
                         
-                        if(length==lengthLargo){
-                            longwords= longwords + "\nTambien es palabra larga: "+palabra;
-                            if(basepalabraL.equalsIgnoreCase(basealrevesL)){
+                        if(firsttry==false){
+                            if(length==lengthLargo){
+                                longwords= longwords + "\nTambien es palabra larga: "+palabra;
+                            if(basepalabraL.equals(basealrevesL)){
                                 longwords= longwords+"\nEs Palindromo";
+                            }else{
+                                longwords= longwords+"\nNo es Palindromo";
                             }
+                            
+                         }
+                        }else{
+                            firsttry=false;
                         }
                         
                         
                         
                      }
                      
+                     System.out.println("");
                      System.out.println(longwords);
+                     System.out.println("");
                       
                     
                     
             }else if(opcion==2){
+                
+                cantperfecto++;
                 //Desarrollo de numero perfecto
                 
                     System.out.println("Ingrese un numero: ");
@@ -130,6 +160,8 @@ public class Carcamo_David_Estructura {
                     
             }else if(opcion==3){
                 
+                
+                cantprimos++;
                 //Generacion de numero random
                 Random random= new Random();
                 int numeroRandom= random.nextInt(100-1)+1;
@@ -181,6 +213,9 @@ public class Carcamo_David_Estructura {
                 
             }else if(opcion==4){
                 
+                
+                
+                cantvotaciones++;
                 //Ingreso de votantes
                 
                 
@@ -261,9 +296,9 @@ public class Carcamo_David_Estructura {
                     
                 }
                 
-                double promedio=(totalVotos*0.60);
+                double porcentaje=(totalVotos*0.60);
                 
-                if(votosValidos>promedio){
+                if(votosValidos>porcentaje){
                     System.out.println("La planilla ganadora es la "+ganador+" con "+cantidadganador+" votos");
                 }else{
                     System.out.println("VOTACION FALLIDA");
@@ -278,6 +313,13 @@ public class Carcamo_David_Estructura {
                 
                 
             }else if(opcion==5){
+                
+                    System.out.println("");
+                    System.out.println("***Conteos de apertura***");
+                    System.out.println("1.Palabras alreves: "+cantreves);
+                    System.out.println("2.Numero Perfecto: "+cantperfecto);
+                    System.out.println("3.Primos: "+cantprimos);
+                    System.out.println("4.Votaciones: "+cantvotaciones);
                 status=false;
             }
                 
