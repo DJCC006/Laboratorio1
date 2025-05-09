@@ -101,9 +101,39 @@ public class Carcamo_David_Estructura {
                     
                     
             }else if(opcion==2){
-             
-                    System.out.println("Imprime aqui la parte 2");
-             }
+                //Desarrollo de numero perfecto
+                
+                    System.out.println("Ingrese un numero: ");
+                    int num=lea.nextInt();
+                    
+                    int perfectsum=0;
+                    
+                        int i;
+                        for(i=1; i<num; i++){
+                            int res=(num%i);
+                            if(res==0){
+                                //divisores=i;
+                                perfectsum=perfectsum+i;
+                            }
+                        }
+                        System.out.println(perfectsum);
+                        if(perfectsum==num){
+                            System.out.println("El numero es perfecto");
+                        }else{
+                            System.out.println("El numero no es perfecto");
+                        }
+                    
+                    
+                    
+            }else if(opcion==3){
+                
+            }else if(opcion==4){
+                
+            }else if(opcion==5){
+                status=false;
+            }
+                
+                
                                 
            
                                 
