@@ -4,6 +4,7 @@
  */
 package laboratorio__1.Semana_3;
 import java.util.Scanner;
+import java.util.Random;
 
 
 /**
@@ -128,6 +129,55 @@ public class Carcamo_David_Estructura {
                     
                     
             }else if(opcion==3){
+                
+                //Generacion de numero random
+                Random random= new Random();
+                int numeroRandom= random.nextInt(100-1)+1;
+                
+                System.out.println("");
+                System.out.println("Numero generado: "+numeroRandom);
+                
+                //Determnador de si es primo
+                int contador=0;
+                int i;
+                int qtydivisores=0;
+                String listaenteros="***Lista de enteros***";
+                for(i=1; i<=numeroRandom; i++){
+                      int res=(numeroRandom%i);
+                      if(res==0){
+                        contador++;
+                        
+                      }
+                         
+                    }
+                
+                if(contador==2){
+                    System.out.println("");
+                    System.out.println("El numero "+numeroRandom+" es primo");
+                }else{
+                    System.out.println("");
+                    System.out.println("El numero no es primo");
+                }
+                
+                
+                
+                
+                
+                //Divisores enteros
+              
+                int j;
+                for(j=1; j<numeroRandom; j++){
+                    int res2=(numeroRandom%j);
+                    if(res2==0){
+                    qtydivisores++;
+                    listaenteros=listaenteros +"\n"+j;
+                }   
+                }
+                
+                System.out.println("Este numero tiene "+qtydivisores+" divisores enteros");
+                System.out.println(listaenteros);
+                
+                
                 
             }else if(opcion==4){
                 
