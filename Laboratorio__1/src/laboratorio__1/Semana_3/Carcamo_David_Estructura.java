@@ -14,21 +14,107 @@ public class Carcamo_David_Estructura {
     
     public static void main(String[] args){
         
-        boolean status=true;
+    boolean status=true;
         
-        while(status==true){
+    while(status==true){
             
             Scanner lea= new Scanner(System.in);
             lea.useDelimiter("\n");
             
+            System.out.println("****Menu****");
+            System.out.println("1.Palabras Alreves"+"\n2.Numero Perfecto"+"\n3.Primos"+"\n4.Votaciones"+"\n5.Salir"+"\nPorfavor ingrese una opcion: ");
+            int opcion=lea.nextInt();
             
+   
+                if(opcion==1){
+                
+                     boolean continuar=false;
+                    
+                    
+                    //while(continuar=false){
+                    System.out.println("\n Ingrese el numero de palabras a evaluar");
+                    int numpalabras=lea.nextInt();
+                    
+                    int lengthLargo=0;
+                    String palabraLarga="";
+                    String almacenpalindromos="";
+                    
+                    String longwords="";
+                    
+                    int i;
+                     for(i=1; i<=numpalabras; i++){
+                        //Ingreso palabra
+                        System.out.println("Ingrese palabra: ");
+                        String palabra= lea.next();
+                        int length=palabra.length();
+                        
+                        
+                        //variables generales
+                        String alreves="";
+                        String basepalabra=palabra;
+                        String basepalabraL= basepalabra.toLowerCase();
+                        String basealreves="";
+                        String Longreverse="";
+                        
+                        
+                        //Ciclo de palabra alreves
+                        int j;
+                        for(j=(length-1);j>=0; j--){
+                            char letra=palabra.charAt(j);
+                            alreves= alreves + letra;
+                            
+                        }
+                        basealreves=alreves;
+                        String basealrevesL=basealreves.toLowerCase();
+                        
+                        
+                         System.out.println("Alreves: "+alreves);
+                        
+                        if(length>lengthLargo){
+                            lengthLargo=length;
+                            palabraLarga=alreves;
+                            Longreverse=basealrevesL;
+                            
+                            longwords= "Palabra mas larga es: "+palabraLarga;
+                            
+                            if(palabraLarga.equalsIgnoreCase(Longreverse)){
+                                longwords= longwords + "\nEs Palindromo";
+                            }
+                            
+                            
+                            
+                        }
+                        
+                        if(length==lengthLargo){
+                            longwords= longwords + "\nTambien es palabra larga: "+palabra;
+                            if(basepalabraL.equalsIgnoreCase(basealrevesL)){
+                                longwords= longwords+"\nEs Palindromo";
+                            }
+                        }
+                        
+                        
+                        
+                     }
+                     
+                     System.out.println(longwords);
+                      
+                    
+                    
+            }else if(opcion==2){
+             
+                    System.out.println("Imprime aqui la parte 2");
+             }
+                                
+           
+                                
+     
+                
+            }
             
-            
-            
-        }
-        
-        
     }
+            
+ }
+ 
+
     
-    
-}
+
