@@ -182,11 +182,14 @@ public class Carcamo_David_Estructura {
             }else if(opcion==4){
                 
                 //Ingreso de votantes
-                System.out.println("");
+                
+                
+                
                 System.out.println("Ingrese la cantidad de votantes en el pais: ");
                 int votantes=lea.nextInt();
                 
                 
+   
                 
                 int votosAzul=0;
                 int votosRojo=0;
@@ -264,6 +267,7 @@ public class Carcamo_David_Estructura {
                     System.out.println("La planilla ganadora es la "+ganador+" con "+cantidadganador+" votos");
                 }else{
                     System.out.println("VOTACION FALLIDA");
+                    System.out.println("");
                 }
                 
                 
