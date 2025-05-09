@@ -116,10 +116,12 @@ public class Carcamo_David_Estructura {
                                 perfectsum=perfectsum+i;
                             }
                         }
-                        System.out.println(perfectsum);
+              
                         if(perfectsum==num){
+                            System.out.println("");
                             System.out.println("El numero es perfecto");
                         }else{
+                            System.out.println("");
                             System.out.println("El numero no es perfecto");
                         }
                     
