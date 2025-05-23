@@ -55,9 +55,6 @@ public class Carcamo_David_Exam1 {
                         
                     }
                     
-                    
-                    
-                    
                     break;
                 
                 case 2:
@@ -82,6 +79,7 @@ public class Carcamo_David_Exam1 {
                             
                             int k;
                             int lengthabc=abecedario.length();
+                            
                             for(k=0; k<=(length-1);k++){
                                 System.out.println("entra aqui");
                                 char letra= mensaje.charAt(k);
@@ -90,78 +88,77 @@ public class Carcamo_David_Exam1 {
                                 char letraopuesta=' ';
                                 
                                 //Ubicacion abecedario general
-                                
-                                
-                                
-                                
+                               
+                                int pos=0; 
+                                int pos1=0;
+                                int pos2=0;
                                 for(l=0;l<=(lengthabc-1);l++){
                                     char letraprovisional=abecedario.charAt(l);
-                                    
-                                    int pos=0; 
+
                                     if(letraprovisional==letra){
                                             pos= abecedario.indexOf(l);
-                                            int pos1=0;
-                                            int pos2=0;
+                                         
+                                }
 
-                                            //Ubicacion por subgrupos
-                                            if(pos>=0 && pos<=13){
-                                                int o;
+                                //Ubicacion por subgrupos
+                                if(pos>=0 && pos<=13){
+                                    int o;
+                                    //Ubicarse en su grupo incial
+                                    int lengthgroup1= group1.length();
+                                    for(o=0; o<=(lengthgroup1-1);o++){
+                                    
+                                    char letrag1=group1.charAt(o);
+                                    if(letrag1==letra){
+                                        pos1=group1.indexOf(o);
+                                        
+                                        }   
 
-                                                //Ubicarse en su grupo incial
-                                                int lengthgroup1= group1.length();
-                                                for(o=0; o<=(lengthgroup1-1);o++){
-                                                    char letrag1=group1.charAt(o);
-                                                    if(letrag1==letra){
-                                                        pos1=group1.indexOf(o);
-                                                    }
-
-                                                }
-
-                                                //ubicarse en su grupo alterno
-                                                int lengthgroup2=group2.length();
-                                                for(o=0; o<=(lengthgroup2-1);o++){
-                                                    int pos3=group2.indexOf(o);
-                                                    if(pos3==pos1){
-                                                        letraopuesta=group2.charAt(o);
-                                                        System.out.println(letraopuesta);
-                                                    }   
-
-                                                }
-                                            }else if(pos>=14 && pos<=26){
-                                                int o;
-                                                int lengthgroup2= group2.length();
-                                                for(o=0; o<(lengthgroup2-1);o++){
-                                                    char letrag2=group2.charAt(o);
-                                                    if(letrag2==letra){
-                                                        pos1=group2.indexOf(o);
-                                                    }
-
-
-                                                //ubicarse en su grupo alterno
-                                                int lengthgroup1=group1.length();
-                                                for(o=0; o<=(lengthgroup1-1);o++){
-                                                    int pos3=group1.indexOf(o);
-                                                    if(pos3==pos1){
-                                                        letraopuesta=group1.charAt(o);
-                                                        System.out.println(letraopuesta);
-                                                    }
-
-                                                    }
-
-                                                }
-
-
-
-                                                }
-                                
                                     }
+
+                                    //ubicarse en su grupo alterno
+                                    int lengthgroup2=group2.length();
+                                    for(o=0; o<=(lengthgroup2-1);o++){
+                                        int pos3=group2.indexOf(o);
+                                            if(pos3==pos1){
+                                                letraopuesta=group2.charAt(pos3);
+                                                System.out.println(letraopuesta);
+                                            }   
+
+                                    }
+                                }else if(pos>=14 && pos<=26){
+                                    int o;
+                                    int lengthgroup2= group2.length();
+                                    for(o=0; o<(lengthgroup2-1);o++){
+                                            char letrag2=group2.charAt(o);
+                                            if(letrag2==letra){
+                                                pos1=group2.indexOf(o);
+                                            }
+
+
+                                    //ubicarse en su grupo alterno
+                                    int lengthgroup1=group1.length();
+                                    for(o=0; o<=(lengthgroup1-1);o++){
+                                            int pos3=group1.indexOf(o);
+                                            if(pos3==pos1){
+                                                letraopuesta=group1.charAt(o);
+                                                System.out.println(letraopuesta);
+                                            }
+
+                                         }
+
+                                    }
+
+
+
                                 }
                                 
+                            }
+                        
                                 
                                 
-                                System.out.println(letraopuesta);
                             
-                   }
+                        }
+                    
                             break;
                             
                 case 2:
