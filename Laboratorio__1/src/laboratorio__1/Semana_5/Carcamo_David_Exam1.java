@@ -79,116 +79,38 @@ public class Carcamo_David_Exam1 {
                 
                 case 2:
                     //Case para seccion de ejercicio de clave
-                    System.out.println("");
-                    System.out.println("Elija una opcion: ");
-                    System.out.println("1.Cifrar"+"\n2.Descrifar");
-                    int opcion2=lea.nextInt();
-                    
-                    String group1="abcdefghijklm";
-                    String group2="zyxwvutsrqpon";
-                    String abecedario="abcdefghijklmnopqrstuvwxyz";
-                    
-                    
-                    switch(opcion2){
-                        case 1:
-                            System.out.println("");
-                            System.out.println("Ingrese mensaje a crifrar: ");
-                            String mensaje=lea.next();
-                            
-                            int length=mensaje.length();
-                            
-                            int k;
-                            int lengthabc=abecedario.length();
-                            
-                            for(k=0; k<=(length-1);k++){
-                                System.out.println("entra aqui");
-                                char letra= mensaje.charAt(k);
-                                
-                                int l;
-                                char letraopuesta=' ';
-                                
-                                //Ubicacion abecedario general
-                               
-                                int pos=0; 
-                                int pos1=0;
-                                int pos2=0;
-                                for(l=0;l<=(lengthabc-1);l++){
-                                    char letraprovisional=abecedario.charAt(l);
+                         System.out.println("Introduzca una frase: ");
+                        String frase= lea.next();
+        
+                        String inverted_abc="zyxwvutsrqponmlkjihgfedcba";
+                        String abc="abcdefghijklmnopqrstuvwxyz";
+        
+                        int length1=frase.length();
+                        int length2=inverted_abc.length();
+                        int m;
 
-                                    if(letraprovisional==letra){
-                                            pos= abecedario.indexOf(l);
-                                         
+                        //palabra general
+                        for(m=0; m<=(length1-1);m++){
+                            char letter1= abc.charAt(m);
+                            char letter1L=Character.toLowerCase(letter1);
+                            int pos1=abc.indexOf(letter1L);
+                            char invertida=' ';
+
+                            int j;
+                            for(j=0; j<=(length2-1);j++){
+                                char letter2=inverted_abc.charAt(j);
+                                char letter2L= Character.toLowerCase(letter2);
+                                int pos2= inverted_abc.indexOf(letter2L);
+                                if(pos2==pos1){
+                                    invertida=letter2L;
                                 }
 
-                                //Ubicacion por subgrupos
-                                if(pos>=0 && pos<=13){
-                                    int o;
-                                    //Ubicarse en su grupo incial
-                                    int lengthgroup1= group1.length();
-                                    for(o=0; o<=(lengthgroup1-1);o++){
-                                    
-                                    char letrag1=group1.charAt(o);
-                                    if(letrag1==letra){
-                                        pos1=group1.indexOf(o);
-                                        
-                                        }   
 
-                                    }
-
-                                    //ubicarse en su grupo alterno
-                                    int lengthgroup2=group2.length();
-                                    for(o=0; o<=(lengthgroup2-1);o++){
-                                        int pos3=group2.indexOf(o);
-                                            if(pos3==pos1){
-                                                letraopuesta=group2.charAt(pos3);
-                                                System.out.println(letraopuesta);
-                                            }   
-
-                                    }
-                                }else if(pos>=14 && pos<=26){
-                                    int o;
-                                    int lengthgroup2= group2.length();
-                                    for(o=0; o<(lengthgroup2-1);o++){
-                                            char letrag2=group2.charAt(o);
-                                            if(letrag2==letra){
-                                                pos1=group2.indexOf(o);
-                                            }
-
-
-                                    //ubicarse en su grupo alterno
-                                    int lengthgroup1=group1.length();
-                                    for(o=0; o<=(lengthgroup1-1);o++){
-                                            int pos3=group1.indexOf(o);
-                                            if(pos3==pos1){
-                                                letraopuesta=group1.charAt(o);
-                                                System.out.println(letraopuesta);
-                                            }
-
-                                         }
-
-                                    }
-
-
-
-                                }
-                                
                             }
-                        
-                                
-                                
-                            
+                            System.out.println(invertida); 
+                    
                         }
-                    
-                            break;
-                            
-                case 2:
-                            break;
-                            
-                        default:
-                    }
-                    
-                    
-                    break;
+                        break;
                 
                 case 3:
                     //Case para juego piedra papel o tijeras
