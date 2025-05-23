@@ -16,13 +16,11 @@ public class Carcamo_David_Exam1 {
         lea.useDelimiter("\n");
         
         boolean statusPrograma=true;
-        System.out.println("***Menu de Opciones***");
-        System.out.println("1.Piramide "+"\n2.Clave"+"\n3.Juego Piedra, Papel y Tijera"+"\n4.Adivinar"+"\n5.Salir");
-        
-        
-        
-        
+       
         while(statusPrograma==true){
+            System.out.println("");
+            System.out.println("***Menu de Opciones***");
+            System.out.println("1.Piramide "+"\n2.Clave"+"\n3.Juego Piedra, Papel y Tijera"+"\n4.Adivinar"+"\n5.Salir");
             System.out.println("");
             System.out.println("Porfavor seleccione una opción: ");
             int opcion=lea.nextInt();
@@ -30,12 +28,33 @@ public class Carcamo_David_Exam1 {
             switch(opcion){
                 
                 case 1:
-                    //Ejercicio piramide
+                    //Case para ejercicio de piramide
                     System.out.println("");
                     
-                    //Validacion aqui
-                    System.out.println("Ingrese la cantidad de filas para la pirámide: ");
-                    int filas=lea.nextInt();
+                    boolean continuar5=false;
+                    int filas=0;
+                    
+                    while(continuar5==false){
+                        System.out.println("Ingrese la cantidad de filas para la pirámide: ");
+                        
+                        if(lea.hasNextInt()){
+                            filas=lea.nextInt();
+                            if(filas<=0){
+                                System.out.println("");
+                                System.out.println("Valor Invalido");
+                                
+                            }else if(filas>0){
+                                continuar5=true;
+                            }
+                            
+                        }else{
+                            System.out.println("");
+                            System.out.println("Valor Invalido.");
+                            lea.next();
+                        }
+                         
+                    }
+                    
                     
                     int num=1;
                     
@@ -46,6 +65,7 @@ public class Carcamo_David_Exam1 {
                         int suma=0;
                         int posiciones;
                         
+                        //Posicionamiento
                         for(posiciones=1; posiciones<=i; posiciones++){
                             System.out.print(num + " ");
                             suma+=num;
@@ -58,7 +78,7 @@ public class Carcamo_David_Exam1 {
                     break;
                 
                 case 2:
-                    //ejercicio clave
+                    //Case para seccion de ejercicio de clave
                     System.out.println("");
                     System.out.println("Elija una opcion: ");
                     System.out.println("1.Cifrar"+"\n2.Descrifar");
@@ -171,6 +191,7 @@ public class Carcamo_David_Exam1 {
                     break;
                 
                 case 3:
+                    //Case para juego piedra papel o tijeras
                     
                     System.out.println("****Bienvenido A Piedra Papel o Tijeras****");
                     boolean gamestatus=true;
@@ -196,7 +217,6 @@ public class Carcamo_David_Exam1 {
                     
                         int numCompu= numerorandom.nextInt(3);
                         
-                        System.out.println(numCompu);
                         String eleccionCompu=" ";
                             
                         //Asignacion de opcion a computadora
@@ -208,7 +228,6 @@ public class Carcamo_David_Exam1 {
                             eleccionCompu="tijeras";
                         }
                         
-                        System.out.println(eleccionCompu);
                         
                         //Comprobacion de ganador
                         if(eleccionCompu.equalsIgnoreCase("piedra")&&seleccionL.equalsIgnoreCase("tijeras")){
@@ -261,7 +280,7 @@ public class Carcamo_David_Exam1 {
                     break;
                     
                 case 4:
-                    //ejercicio adivinar
+                    //Case para ejercicio de adivinar
                     
                     Random numerorandom2= new Random();
                     
@@ -272,10 +291,31 @@ public class Carcamo_David_Exam1 {
                     boolean continuar3=false;
                     while(continuar3==false){
                         conteo++;
-                        System.out.println("");
-                        System.out.println("Intente adivinar el numero: ");
-                        int numerobusca=lea.nextInt();
+                        int numerobusca=0;
+                        boolean continuar4=false;
                         
+                        //Ciclo while para validar el numero ingresado
+                        while(continuar4==false){
+                            System.out.println("");
+                            System.out.println("Intente adivinar el numero: ");
+                            if(lea.hasNextInt()){
+                                numerobusca=lea.nextInt();
+                                 if(numerobusca<=0){
+                                        System.out.println("");
+                                        System.out.println("Opcion invalida.");
+                                        lea.next();
+                                     }else if(numerobusca>0){
+                                        continuar4=true;
+                                     }
+                            }else{
+                                System.out.println("");
+                                System.out.println("Opcion Invalida.");
+                                lea.next();
+                            }
+                            
+                           
+                        }
+
                         if(numerobusca<numeroSecreto){
                             System.out.println("");
                             System.out.println("El numero es mayor al introducido");
