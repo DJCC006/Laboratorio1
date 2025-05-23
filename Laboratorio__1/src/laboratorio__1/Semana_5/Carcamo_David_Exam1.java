@@ -24,28 +24,40 @@ public class Carcamo_David_Exam1 {
             switch(opcion){
                 
                 case 1:
-                    
+                    //Ejercicio piramide
+                    System.out.println("Entra a case 1");
                     
                     break;
                 
                 case 2:
+                    //ejercicio clave
+                    System.out.println("Entra a case 2");
+                    
                     
                     break;
                 
                 case 3:
+                    //Ejercicio juego
+                    System.out.println("Entra a case 3");
+                    
                     
                     break;
                     
                 case 4:
+                    //ejercicio adivinar
+                    System.out.println("Entra a case 4");
+                    
                     
                     break;
                     
                 case 5:
-                    
+                    System.out.println("Entra a case 5");
+                    //salir
+                    statusPrograma=false;
                     break;
                     
                 default:
-                            
+                    System.out.println("Caso default");
                     
             }//Fin de switch
             
