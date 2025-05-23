@@ -48,11 +48,8 @@ public class Carcamo_David_Exam1 {
                         int posiciones;
                         int suma=0;
                         for(posiciones=1; posiciones<=i; posiciones++){
-                            int num=posiciones;
-                            System.out.print(num);
-                            num+=2;
-                            suma+=num;
-                            System.out.print(num);
+                          int num=posiciones+2;
+                            System.out.println(num);
                             
                         }
                         
@@ -94,6 +91,10 @@ public class Carcamo_David_Exam1 {
                                 char letraopuesta=' ';
                                 
                                 //Ubicacion abecedario general
+                                
+                                
+                                
+                                
                                 for(l=0;l<=(lengthabc-1);l++){
                                     char letraprovisional=abecedario.charAt(l);
                                     
@@ -265,7 +266,43 @@ public class Carcamo_David_Exam1 {
                     
                 case 4:
                     //ejercicio adivinar
-                    System.out.println("Entra a case 4");
+                    
+                    Random numerorandom2= new Random();
+                    
+                    int numeroSecreto= numerorandom2.nextInt(100)+1;
+                    
+                    int intentos=1;
+                    int conteo=0;
+                    boolean continuar3=false;
+                    while(continuar3==false){
+                        conteo++;
+                        System.out.println("");
+                        System.out.println("Intente adivinar el numero: ");
+                        int numerobusca=lea.nextInt();
+                        
+                        if(numerobusca<numeroSecreto){
+                            System.out.println("");
+                            System.out.println("El numero es mayor al introducido");
+                        }else if(numerobusca>numeroSecreto){
+                            System.out.println("");
+                            System.out.println("El numero es menor al introducido.");
+                        }else if(numerobusca==numeroSecreto){
+                            System.out.println("");
+                            System.out.println("Felicidades. Se ha descubierto el numero secreto a los "+conteo+" intentos.");
+                            continuar3=true;
+                        }
+                        
+                        if(conteo==10){
+                            System.out.println("");
+                            System.out.println("Intentos agotados");
+                            System.out.println("El numero generado fue: "+numeroSecreto);
+                            continuar3=true;
+                        }
+                        
+                    }
+                    
+                    
+                    
                     
                     
                     break;
