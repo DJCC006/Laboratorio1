@@ -37,22 +37,21 @@ public class Carcamo_David_Exam1 {
                     System.out.println("Ingrese la cantidad de filas para la pirámide: ");
                     int filas=lea.nextInt();
                     
-                    
-                    
-                    
+                    int num=1;
                     
                     //Estructura para desarrollo de piramide
                     int i;
                     for(i=1; i<=filas; i++){
-                        System.out.println("");
-                        int posiciones;
-                        int suma=0;
-                        for(posiciones=1; posiciones<=i; posiciones++){
-                          int num=posiciones+2;
-                            System.out.println(num);
-                            
-                        }
                         
+                        int suma=0;
+                        int posiciones;
+                        
+                        for(posiciones=1; posiciones<=i; posiciones++){
+                            System.out.print(num + " ");
+                            suma+=num;
+                            num+=2;
+                        }
+                        System.out.println(" = " + suma);
                         
                     }
                     
@@ -314,7 +313,8 @@ public class Carcamo_David_Exam1 {
                     break;
                     
                 default:
-                    System.out.println("Caso default");
+                    System.out.println("");
+                    System.out.println("Valor Invalido.");
                     
             }//Fin de switch
             
