@@ -15,27 +15,43 @@ import javax.swing.JTextField;
  */
 public class GamplayFrame extends javax.swing.JFrame{
     
-
+    //Arreglo de palabras
     public static String palabras[]={"casa","gato","perro","camisa","zapato","aeroplano","paracetamol","onomatopeya","ciudad"};
-    //Cantidad de oportunidad
+
     
         
-    //Zona de desarrollo
+    //generador de numero random
     public static Random num = new Random();
     public static int seleccionID= num.nextInt(10);
-        
+    
+    //Seleccion de palabra random
     public static String wordSeleccion= palabras[seleccionID];
     public static int lengthpalabra= wordSeleccion.length();
+    
+    //Creacion de palabras en blanco
     public static String blankword="";
     
+    public static String letraingresada= "";
+    
+    public static boolean mostrar=false;
+    
+    public static boolean evaluar=false;
     
     
+    public static String campoupdate="";
     
-
     public GamplayFrame() {
         initComponents();
         pantallatexto.setEditable(false);
+
         pantallatexto.setText(blankword);
+        ingresoletra.setText(" ");
+      
+        if(mostrar==true){
+            pantallatexto.setText(campoupdate);
+            mostrar=false;
+        }
+  
         
     }
 
@@ -138,7 +154,9 @@ public class GamplayFrame extends javax.swing.JFrame{
     }//GEN-LAST:event_pantallatextoActionPerformed
 
     private void ingresoletraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoletraActionPerformed
-        // TODO add your handling code here:
+         String letra= ingresoletra.getText();
+         letraingresada=letra;
+         evaluar=true;
     }//GEN-LAST:event_ingresoletraActionPerformed
 
     /**
@@ -168,14 +186,40 @@ public class GamplayFrame extends javax.swing.JFrame{
         }
         //</editor-fold>
 
-       
         int oportunidad= 5;
         //generador de palabra en blanco
-         for(int i=0; i<lengthpalabra; i++){
+   
+        
+        int i=0;
+        while(i<=lengthpalabra-1){
             blankword+=("_"+" ");
+            i++;
+        }
+     
+         
+        // letraChar=letraingresada;
+        System.out.println(letraingresada);
+        
+         
+         
+        
+         if(evaluar==true){
+             for(int j=0; j<=lengthpalabra-1; j++){
+                char letraoriginal = wordSeleccion.charAt(j);
+                String Sletraoriginal= Character.toString(letraoriginal);
+                if(letraingresada.equalsIgnoreCase(Sletraoriginal)){
+                    campoupdate+=Sletraoriginal;
+                 
+                }else{
+                 campoupdate+=blankword.charAt(j);
+                }
+            }
+             mostrar=true;
          }
-       
-
+         
+         
+   
+     
         
         
         /* Create and display the form */
