@@ -46,11 +46,7 @@ public class GamplayFrame extends javax.swing.JFrame{
 
         pantallatexto.setText(blankword);
         ingresoletra.setText(" ");
-      
-        if(mostrar==true){
-            pantallatexto.setText(campoupdate);
-            mostrar=false;
-        }
+    
   
         
     }
@@ -155,8 +151,33 @@ public class GamplayFrame extends javax.swing.JFrame{
 
     private void ingresoletraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoletraActionPerformed
          String letra= ingresoletra.getText();
+         System.out.println(letra);
          letraingresada=letra;
          evaluar=true;
+         ingresoletra.setText(" ");
+         
+        
+         if(evaluar==true){
+             for(int j=0; j<=lengthpalabra-1; j++){
+                char letraoriginal = wordSeleccion.charAt(j);
+                String Sletraoriginal= Character.toString(letraoriginal);
+                if(letraingresada.equalsIgnoreCase(Sletraoriginal)){
+                    campoupdate+=Sletraoriginal;
+                 
+                }else{
+                 campoupdate+=blankword.charAt(j);
+                }
+               }
+             mostrar=true;
+           }
+         
+           
+        if(mostrar==true){
+            pantallatexto.setText(campoupdate);
+            mostrar=false;
+        }
+         
+         
     }//GEN-LAST:event_ingresoletraActionPerformed
 
     /**
@@ -185,7 +206,7 @@ public class GamplayFrame extends javax.swing.JFrame{
             java.util.logging.Logger.getLogger(GamplayFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        System.out.println(wordSeleccion);
         int oportunidad= 5;
         //generador de palabra en blanco
    
@@ -196,27 +217,15 @@ public class GamplayFrame extends javax.swing.JFrame{
             i++;
         }
      
-         
-        // letraChar=letraingresada;
-        System.out.println(letraingresada);
         
-         
-         
-        
-         if(evaluar==true){
-             for(int j=0; j<=lengthpalabra-1; j++){
-                char letraoriginal = wordSeleccion.charAt(j);
-                String Sletraoriginal= Character.toString(letraoriginal);
-                if(letraingresada.equalsIgnoreCase(Sletraoriginal)){
-                    campoupdate+=Sletraoriginal;
-                 
-                }else{
-                 campoupdate+=blankword.charAt(j);
-                }
-            }
-             mostrar=true;
-         }
-         
+        /*
+        boolean ejecucionPrograma=true;
+        while(ejecucionPrograma==true){
+          
+          
+        }
+
+        */
          
    
      
