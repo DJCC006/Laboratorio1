@@ -33,12 +33,16 @@ public class GamplayFrame extends javax.swing.JFrame{
     
     public static String letraingresada= "";
     
-    public static boolean mostrar=false;
+
     
     public static boolean evaluar=false;
     
     
     public static String campoupdate="";
+    
+    public static String estadoActual[];
+    
+    public static String oportunidad= "5";
     
     public GamplayFrame() {
         initComponents();
@@ -46,9 +50,11 @@ public class GamplayFrame extends javax.swing.JFrame{
 
         pantallatexto.setText(blankword);
         ingresoletra.setText(" ");
-    
-  
+        oportunidades.setEditable(false);
+        oportunidades.setText(oportunidad);
         
+        
+       
     }
 
     /**
@@ -100,6 +106,11 @@ public class GamplayFrame extends javax.swing.JFrame{
         label1.setText("Ingrese una letra");
 
         oportunidades.setText("Oportunidades: n");
+        oportunidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oportunidadesActionPerformed(evt);
+            }
+        });
 
         textoshow.setAlignment(java.awt.Label.CENTER);
         textoshow.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -150,35 +161,38 @@ public class GamplayFrame extends javax.swing.JFrame{
     }//GEN-LAST:event_pantallatextoActionPerformed
 
     private void ingresoletraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoletraActionPerformed
-         String letra= ingresoletra.getText();
+         String letra= ingresoletra.getText().toLowerCase();
+         
+         
          System.out.println(letra);
          letraingresada=letra;
-         evaluar=true;
          ingresoletra.setText(" ");
+         boolean acertado= false;
          
+         for(int j=0; j<=lengthpalabra; j++){
+            char letraoriginal = wordSeleccion.charAt(j);
+            String Sletraoriginal= Character.toString(letraoriginal);
+            if(letra.equalsIgnoreCase(Sletraoriginal)){
+                estadoActual[j] = Sletraoriginal;
+                acertado=true;
+            }
+         }
+
         
-         if(evaluar==true){
-             for(int j=0; j<=lengthpalabra-1; j++){
-                char letraoriginal = wordSeleccion.charAt(j);
-                String Sletraoriginal= Character.toString(letraoriginal);
-                if(letraingresada.equalsIgnoreCase(Sletraoriginal)){
-                    campoupdate+=Sletraoriginal;
-                 
-                }else{
-                 campoupdate+=blankword.charAt(j);
-                }
-               }
-             mostrar=true;
-           }
-         
-           
-        if(mostrar==true){
-            pantallatexto.setText(campoupdate);
-            mostrar=false;
+        String showword="";
+        for(int i=0; i<=lengthpalabra-1;i++){
+            showword+=estadoActual[i];
         }
-         
+        
+        
+        pantallatexto.setText(showword);
+        
          
     }//GEN-LAST:event_ingresoletraActionPerformed
+
+    private void oportunidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oportunidadesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oportunidadesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,21 +221,29 @@ public class GamplayFrame extends javax.swing.JFrame{
         }
         //</editor-fold>
         System.out.println(wordSeleccion);
-        int oportunidad= 5;
-        //generador de palabra en blanco
-   
         
+        
+       
+        
+       
+        
+        
+        //generador de palabra en blanco
         int i=0;
-        while(i<=lengthpalabra-1){
+        while(i<=(lengthpalabra-1)){
             blankword+=("_"+" ");
             i++;
         }
-     
+        
+        //Actualizacion de estado actual de string 
+        estadoActual= new String[lengthpalabra];
+        for(int j=0; j<=(lengthpalabra-1); j++){
+            estadoActual[j]="_";
+        }
+       
+        
         
         /*
-        boolean ejecucionPrograma=true;
-        while(ejecucionPrograma==true){
-          
           
         }
 

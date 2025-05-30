@@ -14,11 +14,7 @@ public class Carcamo_David_IDClase extends javax.swing.JFrame {
     
     public static void main(String[] args) {
         //Parte donde se crea el arreglo inicial
-        String palabras[]={"casa","gato","perro","camisa","zapato","aeroplano","paracetamol","onomatopeya","ciudad"};
-
-        //Cantidad de oportunidad
-        int oportunidades= 5;
-
+       
 
         new PantalladeJuego().setVisible(true);
     }
