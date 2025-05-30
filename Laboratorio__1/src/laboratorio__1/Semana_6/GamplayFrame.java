@@ -239,13 +239,8 @@ public class GamplayFrame extends javax.swing.JFrame{
         }
        
         
-        
-        /*
-          
-        }
-
-        */
-         
+        System.out.println(" hola test ");
+ 
    
      
         
