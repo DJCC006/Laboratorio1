@@ -169,11 +169,12 @@ public class GamplayFrame extends javax.swing.JFrame{
          ingresoletra.setText(" ");
          boolean acertado= false;
          
-         for(int j=0; j<=lengthpalabra; j++){
+         for(int j=0; j<=lengthpalabra-1; j++){
             char letraoriginal = wordSeleccion.charAt(j);
             String Sletraoriginal= Character.toString(letraoriginal);
             if(letra.equalsIgnoreCase(Sletraoriginal)){
-                estadoActual[j] = Sletraoriginal;
+                estadoActual[j] = letra;
+                //Acertado se supone que deberia servir para mostrar un mensaje luego
                 acertado=true;
             }
          }
@@ -223,11 +224,7 @@ public class GamplayFrame extends javax.swing.JFrame{
         System.out.println(wordSeleccion);
         
         
-       
-        
-       
-        
-        
+      
         //generador de palabra en blanco
         int i=0;
         while(i<=(lengthpalabra-1)){
